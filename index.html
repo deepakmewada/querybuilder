@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/query-builder.default.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+        var selectData = [{
+                "name": "Sender",
+                "title": "SENDER",
+                "columns": [{
+                        "name": "sender.groupId",
+                        "title": "Group Id"
+                    },
+                    {
+                        "name": "sender.userId",
+                        "title": "User Id"
+                    },
+                    {
+                        "name": "sender.loginId",
+                        "title": "Login Id"
+                    },
+                    {
+                        "name": "sender.firstName",
+                        "title": "First Name"
+                    },
+                    {
+                        "name": "sender.lastName",
+                        "title": "Last Name"
+                    },
+                    {
+                        "name": "sender.registrationDate",
+                        "title": "Registration Date"
+                    },
+                    {
+                        "name": "sender.emailId",
+                        "title": "EmailId"
+                    },
+                    {
+                        "name": "sender.mobile",
+                        "title": "Mobile"
+                    },
+                    {
+                        "name": "sender.state",
+                        "title": "State"
+                    },
+                    {
+                        "name": "sender.countryCode",
+                        "title": "Country Code"
+                    },
+                    {
+                        "name": "sender.industry",
+                        "title": "Industry"
+                    }, {
+                        "name": "sender.marketingRef",
+                        "title": "Marketing Reference"
+                    }, {
+                        "name": "sender.nationality",
+                        "title": "Nationality"
+                    }, {
+                        "name": "sender.channelId",
+                        "title": "Channel Id"
+                    }, {
+                        "name": "sender.marketCommunication",
+                        "title": "Market Communication"
+                    }, {
+                        "name": "sender.pageReferer",
+                        "title": "Page Referer"
+                    }
+                ]
+            },
+            {
+                "name": "Receiver",
+                "title": "RECEIVER",
+                "columns": [
+
+                    {
+                        "name": "receiver.nickName",
+                        "title": "Receiver Nick Name"
+                    },
+                    {
+                        "name": "receiver.firstName",
+                        "title": "Receiver First Name"
+                    },
+                    {
+                        "name": "receiver.lastName",
+                        "title": "Receiver Last Name"
+                    },
+                    {
+                        "name": "receiver.registrationDate",
+                        "title": "Receiver Registration Date"
+                    },
+                    {
+                        "name": "receiver.emailId",
+                        "title": "Receiver Email Id"
+                    },
+                    {
+                        "name": "receiver.mobile",
+                        "title": "Receiver Mobile"
+                    },
+                    {
+                        "name": "receiver.state",
+                        "title": "Receiver State"
+                    },
+                    {
+                        "name": "receiver.countryCode",
+                        "title": "Receiver Country Code"
+                    },
+                    {
+                        "name": "receiver.bankName",
+                        "title": "Receiver Bank Name"
+                    }, {
+                        "name": "receiver.relationship",
+                        "title": "Relationship with Receiver"
+                    }, {
+                        "name": "receiver.purpose",
+                        "title": "Receiver Purpose"
+                    }, {
+                        "name": "receiver.channelId",
+                        "title": "Receiver ChannelId"
+                    }, {
+                        "name": "receiver.occupation",
+                        "title": "Receiver Occupation"
+                    }, {
+                        "name": "receiver.schemeCode",
+                        "title": "Receiver Scheme Code"
+                    }, {
+                        "name": "receiver.currencyCode",
+                        "title": "Receiving Currency Code"
+                    }
+                ]
+            },
+            {
+                "name": "Transactions",
+                "title": "TRANSACTIONS",
+                "columns": [
+
+                    {
+                        "name": "transactions.rgtn",
+                        "title": "RGTN"
+                    },
+                    {
+                        "name": "transactions.sendCountryCode",
+                        "title": "Send Country Code"
+                    },
+                    {
+                        "name": "transactions.sendCurrencyCode",
+                        "title": "Send Currency Code"
+                    },
+                    {
+                        "name": "transactions.recvCountryCode",
+                        "title": "Receiving Country Code"
+                    },
+                    {
+                        "name": "transactions.recvCurrencyCode",
+                        "title": "Receiving Currency Code"
+                    },
+                    {
+                        "name": "transactions.sendModeCode",
+                        "title": "Sending Option Code"
+                    },
+                    {
+                        "name": "transactions.programCode",
+                        "title": "Program Code"
+                    },
+                    {
+                        "name": "transactions.bookingDate",
+                        "title": "Transaction Booking Date"
+                    },
+                    {
+                        "name": "transactions.sendAmount",
+                        "title": "Send Amount"
+                    }, {
+                        "name": "transactions.recvAmount",
+                        "title": "Recving Amount"
+                    }, {
+                        "name": "transactions.conversionRate",
+                        "title": "Exchange Rate"
+                    }, {
+                        "name": "transactions.groupTxnFee",
+                        "title": "Transaction Fee"
+                    }, {
+                        "name": "transactions.fircPurpose",
+                        "title": "Purpose"
+                    }, {
+                        "name": "transactions.txnRefNo",
+                        "title": "Transaction Reference Number"
+                    },
+                    {
+                        "name": "transactions.nickName",
+                        "title": "Receiver Nick Name"
+                    },
+                    {
+                        "name": "transactions.firstName",
+                        "title": "Receiver First Name"
+                    },
+                    {
+                        "name": "transactions.lastName",
+                        "title": "Receiver Last Name"
+                    },
+                    {
+                        "name": "transactions.emailId",
+                        "title": "Receiver Email Id"
+                    },
+                    {
+                        "name": "transactions.mobile",
+                        "title": "Receiver Mobile"
+                    },
+                    {
+                        "name": "transactions.state",
+                        "title": "Receiver State"
+                    },
+                    {
+                        "name": "transactions.countryCode",
+                        "title": "Receiver Ccountry Code"
+                    },
+                    {
+                        "name": "transactions.bankName",
+                        "title": "Receiver Bank Name"
+                    },
+                    {
+                        "name": "transactions.relationship",
+                        "title": "Relationship With Receiver"
+                    }
+                ]
+            }
+        ]
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="main-content">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label>Table</label>
+                            <select class="form-control" id="table" onchange="handleColumn(this)">
+                                <option value="" disabled selected> - Select - </option>
+                            </select></div>
+                        <div class="col-md-4">
+                            <label>Column</label>
+                            <select class="form-control" id="column" onchange="pushData(this)">
+                                <option value="" disabled selected> - Select - </option>
+
+                            </select>
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <ul class="list" id="listData"></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="builder"></div>
+            <button class="btn btn-success" id="btn-set">Set Rules</button>
+            <button class="btn btn-primary" id="btn-get">Get Rules</button>
+            <button class="btn btn-info" id="btn-set-sql">Set SQL</button>
+            <button class="btn btn-info" id="btn-get-sql">Get SQL Query</button>
+            <button class="btn btn-warning" id="btn-reset">Reset</button>
+            <textarea class="form-control query_body" readonly></textarea>
+        </div>
+    </div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/query-builder.standalone.min.js"></script>
+    <script src="js/sql-parser.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/moment.min.js"></script>
+    <script src="js/bootstrap-datepicker.min.js"></script>
+
+    <script>
+        selectData.forEach(item => {
+            $('#table').append('<option>' + item.name + '</option>');
+        })
+
+        function handleColumn(e) {
+            let tableValue = e.value;
+            selectData.forEach(item => {
+                if (item.name === tableValue) {
+                    $('#column').find('option').remove()
+                    $('#column').append('<option value="" selected disabled >- Select -</option>');
+                    item.columns.forEach(option => {
+
+                        $('#column').append('<option value="' + option.name + '"">' + option.title +
+                            '</option>');
+                    }) 
+                }
+            })
+            
+        }
+        var sql_import_export = 'name LIKE "%Johnny%" AND (category = 2 OR in_stock = 1)';
+
+        var rules_basic = {
+            condition: 'AND',
+            rules: [{
+                id: 'price',
+                operator: 'less',
+                value: 10.25
+            }, {
+                condition: 'OR',
+                rules: [{
+                    id: 'category',
+                    operator: 'equal',
+                    value: 2
+                }, {
+                    id: 'category',
+                    operator: 'equal',
+                    value: 1
+                }]
+            }]
+        };
+
+        $('#builder').queryBuilder({
+            // filters will work like options
+            filters: [{
+                    id: 'name',
+                    label: 'Name',
+                    type: 'string'
+                }, {
+                    id: 'category',
+                    label: 'Category',
+                    type: 'integer',
+                    input: 'select',
+                    values: {
+                        1: 'Books',
+                        2: 'Movies',
+                        3: 'Music',
+                        4: 'Tools',
+                        5: 'Goodies',
+                        6: 'Clothes'
+                    },
+                    operators: ['equal', 'not_equal', 'in', 'not_in', 'is_null', 'is_not_null']
+                }, {
+                    id: 'in_stock',
+                    label: 'In stock',
+                    type: 'integer',
+                    input: 'radio',
+                    values: {
+                        1: 'Yes',
+                        0: 'No'
+                    },
+                    operators: ['equal']
+                }, {
+                    id: 'price',
+                    label: 'Price',
+                    type: 'double',
+                    validation: {
+                        min: 0,
+                        step: 0.01
+                    }
+                }, {
+                    id: 'id',
+                    label: 'Identifier',
+                    type: 'string',
+                    placeholder: '____-____-____',
+                    operators: ['equal', 'not_equal'],
+                    validation: {
+                        format: /^.{4}-.{4}-.{4}$/
+                    }
+                },
+                {
+                    id: 'date',
+                    label: 'Datepicker',
+                    type: 'date',
+                    validation: {
+                        format: 'YYYY/MM/DD'
+                    },
+                    plugin: 'datepicker',
+                    plugin_config: {
+                        format: 'yyyy/mm/dd',
+                        todayBtn: 'linked',
+                        todayHighlight: true,
+                        autoclose: true
+                    }
+                }
+            ],
+            rules: rules_basic
+        });
+
+        var dataArr = []
+        var tableArr = []
+
+
+        $('#btn-get').on('click', function () {
+            var result = $('#builder').queryBuilder('getRules');
+            if (!$.isEmptyObject(result)) {
+                alert(JSON.stringify(result, null, 2));
+            } else {
+                console.log("invalid object :");
+            }
+            console.log(result);
+        });
+
+        $('#btn-reset').on('click', function () {
+            $('#builder').queryBuilder('reset');
+        });
+
+        $('#btn-set').on('click', function () {
+            //$('#builder').queryBuilder('setRules', rules_basic);
+            var result = $('#builder').queryBuilder('getRules');
+            if (result.sql.length) {
+                alert(result.sql + '\n\n' + JSON.stringify(result.params, null, 2));
+            }
+        });
+
+
+        // set basic sql query 
+        $('#btn-set-sql').on('click', function () {
+            $('#builder').queryBuilder('setRulesFromSQL', sql_import_export);
+        });
+
+        var orderbyStr = "";
+
+function CreateColumnQuery(){
+            const tableVal = $('#table').val();
+            const columnVal = $('#column').val();
+      
+           
+            dataArr.splice(0, dataArr.length)
+            orderbyStr = "";
+            $('#listData').find('li').each(function () {
+                    const tableName = $(this).attr('data-value').split('.')[0];
+                    const columnName = $(this).attr('data-value');
+                    const orderBy = $(this).attr('data-orderby');
+
+                   
+                    if(orderBy != undefined && orderBy != ""){
+                        orderbyStr = columnName + " " + orderBy
+                    }
+
+                   
+                    if(tableArr.indexOf(tableName) == -1) {
+                        tableArr.push(tableName)
+                    }
+                    
+                    if(dataArr.indexOf(columnName) == -1) {
+                        dataArr.push(columnName)
+                    }
+                })
+           
+          
+}
+        $('#btn-get-sql').on('click', function (e) {
+            $('.query_body').val("")
+            var result = $('#builder').queryBuilder('getSQL', 'question_mark');
+            if($('#listData').find('li').length !== 0){
+                CreateColumnQuery();
+                if (result.sql.length) {
+                    $('#query_title').html(e.target.textContent);
+                    let joinArr = dataArr.join()
+                    let joinTableArr = tableArr.join()
+                    var valArray = result.params;
+
+                    var str = result.sql;
+                    var strCount = str.length;
+                    var count = 0;
+                    for (var x = 0; x < strCount + 1; x++) {
+                        let ques = str[x]
+                        if (ques == "?") {
+                            str = str.replace('?', valArray[count]);
+                            count++
+                        }
+                    }
+
+                    if(orderbyStr == ""){
+                        $('.query_body').val("SELECT " + joinArr + " FROM " + joinTableArr + " WHERE " + str + JSON.stringify(result.params) )
+                    }else{
+                        $('.query_body').val("SELECT " + joinArr + " FROM " + joinTableArr + " WHERE " + str + JSON.stringify(result.params) + " orderby " + orderbyStr)
+                    }
+                }
+            }else{
+                alert("Please Select Column and Table")
+            }
+          
+        });
+
+        $('#builder').on('getRules.queryBuilder.filter', function (e) {
+            //$log.info(e.value);
+        });
+
+        $("ul.list").sortable();
+        $("ul.list").disableSelection();
+
+        const pushData = (e) => {
+            const value = e.value;
+            const title = e.options[e.selectedIndex].text;
+            $('#listData').append('<li data-value="' + value + '" ><i class="drag-icon glyphicon glyphicon-move"></i> ' + title + ' <a class="btn-danger" onclick="deleteLi(this)"><i class="glyphicon glyphicon-remove"></i></a></li>')
+            
+            triggerClickEvents();
+        }
+
+
+        function triggerClickEvents(){
+            
+
+            $('#listData li').each(function(){
+            $(this).off().on('click',function(){
+                $(this).siblings('li').find('.orderby').remove();
+                $(this).siblings('li').attr('data-orderby','');
+                $(this).siblings('.active').removeClass();
+                $(this).addClass('active');
+                const attrVal = $(this).attr('data-orderby')
+                console.log(attrVal)
+                
+                switch(attrVal){
+                    case 'asc':
+                        $(this).attr('data-orderby','dsc');
+                        $(this).find('.orderby').remove();
+                        $(this).append('<i class="orderby glyphicon glyphicon-chevron-down"></i>');
+                        break;
+                    case 'dsc':
+                        $(this).attr('data-orderby','');
+                        $(this).find('.orderby').remove();
+                        $(this).removeClass();
+                        $(this).append('<i class="orderby"></i>');
+                        break;
+                    case undefined:
+                        $(this).attr('data-orderby','asc');
+                        $(this).find('.orderby').remove();
+                        $(this).append('<i class="orderby glyphicon glyphicon-chevron-up"></i>');
+                        break;
+                    case "":
+                        $(this).attr('data-orderby','asc');
+                        $(this).find('.orderby').remove();
+                        $(this).append('<i class="orderby glyphicon glyphicon-chevron-up"></i>');
+                        break;
+                    default:
+                        $(this).attr('data-orderby','asc');
+                        $(this).find('.orderby').remove();
+                        $(this).append('<i class="orderby glyphicon glyphicon-chevron-up"></i>');
+                        break;
+
+                }
+                // const className = $(this).find('.orderby')
+            // const name = $(this).addClass('glyphicon glyphicon-arrow-up');
+            // const 
+            // switch
+            })
+        })
+        }
+        
+
+        function deleteLi(e) {
+            $(e).parent('li').remove()
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,11 @@
+select top 100 a.loginid, b.* from usermaster a, userlogindetails b where a.userid = b.userid  and ulStatus = 'A'   order by LASTACCESSTIME  desc
+
+
+
+SELECT id, firstname, lastname FROM TABLE1, TABLE2 WHERE lastname='Doe' orderby firstname dsc, lastname asc
+
+
+// to build ui
+
+
+
